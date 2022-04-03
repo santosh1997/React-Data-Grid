@@ -1,4 +1,4 @@
-const CircleIcon = (): JSX.Element => {
+const CancelIcon = (): JSX.Element => {
   return (
     <svg
       width="20"
@@ -34,4 +34,4 @@ const CircleIcon = (): JSX.Element => {
   );
 };
 
-export default CircleIcon;
+export default CancelIcon;
