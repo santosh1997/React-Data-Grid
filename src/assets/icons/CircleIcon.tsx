@@ -13,7 +13,7 @@ const CircleIcon = (): JSX.Element => {
         r="6"
         fill="white"
         stroke="#3C5DD2"
-        stroke-width="2"
+        strokeWidth="2"
       ></circle>
     </svg>
   );
