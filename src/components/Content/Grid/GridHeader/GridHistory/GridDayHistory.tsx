@@ -32,7 +32,7 @@ const GridDayHistory = ({
       <GridDayHistoryContentHeader>{day}</GridDayHistoryContentHeader>
       <GridDayHistoryContentWrapper>
         {times.map((time) => (
-          <GridChangeContainer>
+          <GridChangeContainer key={time}>
             <GridChangeDefinition>
               {getGridChangeDescription(dayHistory[time], columnDisplayName)}
             </GridChangeDefinition>

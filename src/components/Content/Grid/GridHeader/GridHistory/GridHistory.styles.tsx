@@ -8,6 +8,7 @@ const GridHistoryWrapper = styled.div`
   transition: right 0.7s ease-out;
   right: -500px;
   top: 0px;
+  background: #fff;
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.05);
   ::-webkit-scrollbar {
     display: none;
@@ -25,11 +26,14 @@ const GridHistoryHeader = styled.div`
 const GridHistoryContentWrapper = styled.div`
   background: #fff;
   padding-left: 28.5px;
+  height: calc(100% - 60px);
 `;
 
 const GridHistoryContentContainer = styled.div`
   width: calc(100% - 28.5px);
   border-left: 1px solid rgba(0, 0, 0, 0.2);
+  min-height: 100%;
+}
 `;
 
 const ClockIconWrapper = styled.div`

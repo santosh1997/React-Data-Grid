@@ -21,6 +21,7 @@ const GridHistoryContent = ({
       <GridHistoryContentContainer>
         {dates.map((date) => (
           <GridDayHistory
+            key={date}
             dayHistory={changeHistory[date].changes}
             day={getDay(
               changeHistory[date].year,

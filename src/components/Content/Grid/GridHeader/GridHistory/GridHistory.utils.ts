@@ -61,7 +61,6 @@ const getGridChangeDescription = (
 
 const getDisplayTime = (time: string): string => {
   const date = new Date(parseInt(time));
-  console.log(time);
   return `${getNormalizedTwoDigits(date.getHours())}:${getNormalizedTwoDigits(
     date.getMinutes()
   )}`;
