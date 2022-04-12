@@ -23,14 +23,12 @@ const GridHistoryHeader = styled.div`
 `;
 
 const GridHistoryContentWrapper = styled.div`
-  height: calc(100vh - 60px);
   background: #fff;
   padding-left: 28.5px;
 `;
 
 const GridHistoryContentContainer = styled.div`
   width: calc(100% - 28.5px);
-  height: 100%;
   border-left: 1px solid rgba(0, 0, 0, 0.2);
 `;
 
