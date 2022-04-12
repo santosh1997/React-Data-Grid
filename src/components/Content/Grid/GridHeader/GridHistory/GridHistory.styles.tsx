@@ -9,6 +9,9 @@ const GridHistoryWrapper = styled.div`
   right: -500px;
   top: 0px;
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.05);
+  ::-webkit-scrollbar {
+    display: none;
+  }
   &.Open {
     right: 0px;
   }
