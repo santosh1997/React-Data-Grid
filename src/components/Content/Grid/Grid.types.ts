@@ -24,4 +24,5 @@ export type GridDataType = {
   records: GridRecordType;
   columnDisplayName: ColumnDisplayNameType;
   changeHistory: GridHistoryDataType;
+  searchText?: string;
 };

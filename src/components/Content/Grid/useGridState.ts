@@ -11,6 +11,7 @@ const useGridState = (
     defaultData: GridDataType = persistedData
       ? JSON.parse(persistedData)
       : defaultDataGenerator(100);
+  defaultData.searchText = "";
 
   const [data, setData] = useState<GridDataType>(defaultData);
 
@@ -33,7 +34,13 @@ const useGridState = (
     setData(clonedData);
   };
 
-  return { data, onChange };
+  const onSearch = (searchValue: string) => {
+    const clonedData: GridDataType = JSON.parse(JSON.stringify(data));
+    clonedData.searchText = searchValue;
+    setData(clonedData);
+  };
+
+  return { data, onChange, onSearch };
 };
 
 export default useGridState;

@@ -4,11 +4,21 @@ import {
   SearchInput,
   SearchIconWrapper,
 } from "./SearchBox.styles";
+import { debounce } from "lodash";
+import React from "react";
 
-const SearchBox = (): JSX.Element => {
+interface IProps {
+  onSearch: (searchText: string) => void;
+}
+const SearchBox = ({ onSearch }: IProps): JSX.Element => {
+  const onChange = debounce(
+    (event: React.ChangeEvent<HTMLInputElement>) =>
+      onSearch(event.target.value),
+    300
+  );
   return (
     <SearchBoxWrapper>
-      <SearchInput placeholder="Search for data..." />
+      <SearchInput placeholder="Search for data..." onChange={onChange} />
       <SearchIconWrapper>
         <SearchIcon />
       </SearchIconWrapper>

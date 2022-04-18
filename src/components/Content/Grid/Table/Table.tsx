@@ -18,14 +18,25 @@ interface IProps {
   records: GridRecordType;
   columnDisplayName: ColumnDisplayNameType;
   onChange: React.Dispatch<GridChangeDataType>;
+  searchText?: string;
 }
 
 const Table = ({
   records,
   columnDisplayName,
   onChange,
+  searchText,
 }: IProps): JSX.Element => {
   const columns = Object.keys(columnDisplayName);
+
+  const normalizedRecords = searchText
+    ? records.filter((record) => {
+        const regex = new RegExp(searchText, "g");
+        const columns = Object.keys(record);
+        return columns.find((column) => regex.test(record[column]));
+      })
+    : records;
+
   return (
     <TableWrapper>
       <StyledTable>
@@ -39,7 +50,7 @@ const Table = ({
           </TableHeadRow>
         </TableHead>
         <TableBody>
-          {records.map((record, recordIndex) => (
+          {normalizedRecords.map((record, recordIndex) => (
             <TableRow key={recordIndex}>
               {columns.map((column) => (
                 <EditableCell

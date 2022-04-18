@@ -6,6 +6,7 @@ import GridHistoryButton from "./GridHistoryButton";
 import SearchBox from "./SearchBox";
 
 interface IProps {
+  onSearch: (searchText: string) => void;
   changeHistory: GridHistoryDataType;
   columnDisplayName: ColumnDisplayNameType;
 }
@@ -13,11 +14,12 @@ interface IProps {
 const GridHeader = ({
   changeHistory,
   columnDisplayName,
+  onSearch,
 }: IProps): JSX.Element => {
   const [historyOpen, setHistoryOpen] = useState<boolean>(false);
   return (
     <GridHeaderWrapper>
-      <SearchBox />
+      <SearchBox onSearch={onSearch} />
       <GridHistoryButton onClick={() => setHistoryOpen(true)} />
       <GridHistory
         isOpen={historyOpen}

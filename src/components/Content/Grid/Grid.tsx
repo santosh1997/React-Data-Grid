@@ -5,10 +5,11 @@ import Table from "./Table/Table";
 import useGridState from "./useGridState";
 
 const Grid = (): JSX.Element => {
-  const { data, onChange } = useGridState(getDefaultData);
+  const { data, onChange, onSearch } = useGridState(getDefaultData);
   return (
     <GridWrapper>
       <GridHeader
+        onSearch={onSearch}
         changeHistory={data.changeHistory}
         columnDisplayName={data.columnDisplayName}
       />
@@ -16,6 +17,7 @@ const Grid = (): JSX.Element => {
         records={data.records}
         columnDisplayName={data.columnDisplayName}
         onChange={onChange}
+        searchText={data.searchText}
       />
     </GridWrapper>
   );
